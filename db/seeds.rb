@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Author.destroy_all
+Book.destroy_all
+
+harper_lee = Author.create(name: "Harper Lee")
+tkam = harper_lee.books.create(title: "To Kill a Mockingbird", number_of_pages: 296, publication_year: 1960)
