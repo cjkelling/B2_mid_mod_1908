@@ -1,0 +1,9 @@
+<% @students.each do |student| %>
+  <section id= 'student-<%= student.id %>'>
+    <h2> <%= student.name %></h2>
+    <p> Cohort: <%= student.instructor_students.pluck(:cohort).first %></p>
+    <p> Instructors: <% student.instructors.map do |instructor| %>
+      <%= link_to "#{instructor.name}", "/instructors/#{instructor.id}" %>
+    <% end %></p>
+  </section>
+<% end %>
